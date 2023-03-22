@@ -10,7 +10,8 @@ export class EmpfilterPipe implements PipeTransform {
       return values;
 
     }
-    return values.filter((value)=>value.city == filter);
+    return values.filter((value)=> value.name.indexOf(filter)>-1
+    || value.gender.indexOf(filter)>-1 ||  value.city.indexOf(filter)>-1 );
   }
 
 }
