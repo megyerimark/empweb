@@ -8,6 +8,7 @@ import { EmpfilterPipe } from './shared/pipe/empfilter.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
      ToastrModule.forRoot(),
+     FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

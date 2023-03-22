@@ -10,6 +10,9 @@ import { ApiService } from '../shared/api.service';
 
 
 export class EmpComponent  implements OnInit{
+  employees!:any;
+  actualGender!:string;
+
 
 
   constructor(private api:ApiService,
@@ -28,7 +31,6 @@ export class EmpComponent  implements OnInit{
 
 
   }
-  employees!:any;
 
   getEmployees(){
     this.api.getEmployee().subscribe({

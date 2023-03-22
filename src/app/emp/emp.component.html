@@ -1,8 +1,10 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+<h1>Dolgozók</h1>
 
-<table class="table table-primary">
+  <input type="search" [(ngModel)]="actualGender">
+<table class="table">
   <thead>
     <tr>
       <th>#</th>
@@ -12,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of employees">
+    <tr *ngFor="let emp of employees | empfilter:actualGender">
       <td class="animate__animated animate__jello">{{emp.id}}</td>
       <td class="animate__animated animate__jello">{{emp.name}}</td>
       <td class="animate__animated animate__jello">{{emp.city}}</td>
