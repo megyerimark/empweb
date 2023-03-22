@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,
+    private toastr: ToastrService) { }
 
 
 
@@ -14,7 +16,8 @@ export class ApiService {
 
 
   getEmployee(){
-    let url ="http:/localhost:8000/employees";
+    let url ="http://localhost:8000/employees";
+
     return this.http.get<any>(url);
   }
 }

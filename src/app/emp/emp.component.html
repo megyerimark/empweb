@@ -1,1 +1,23 @@
-<p>emp works!</p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+<table class="table table-primary">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Név</th>
+      <th>Település</th>
+      <th>Neme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td class="animate__animated animate__jello">{{emp.id}}</td>
+      <td class="animate__animated animate__jello">{{emp.name}}</td>
+      <td class="animate__animated animate__jello">{{emp.city}}</td>
+      <td class="animate__animated animate__jello">{{emp.gender}}</td>
+
+    </tr>
+  </tbody>
+</table>

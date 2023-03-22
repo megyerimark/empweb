@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../shared/api.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { ApiService } from '../shared/api.service';
 export class EmpComponent  implements OnInit{
 
 
-  constructor(private api:ApiService) {}
+  constructor(private api:ApiService,
+    private toastr: ToastrService) {}
 
 
 
@@ -26,13 +28,17 @@ export class EmpComponent  implements OnInit{
 
 
   }
+  employees!:any;
 
   getEmployees(){
     this.api.getEmployee().subscribe({
       next: data =>{
-     
+        this.employees = data
+        this.toastr.success("Sikeres lekérdezés!")
+
       },
       error: err =>{
+        this.toastr.error("Lekérdezés sikertelen!")
 
       }
 
